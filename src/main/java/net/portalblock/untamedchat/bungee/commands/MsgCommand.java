@@ -31,12 +31,12 @@ public class MsgCommand extends Command implements TabExecutor{
     @Override
     public void execute(CommandSender sender, String[] strings) {
         if(strings.length < 2){
-            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.RED + "Uzyj /msg [nick] [wiadomosc]"));
+            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.AQUA + "[TCMsg]" + ChatColor.RED + "Wpisz! /msg [nick] [wiadomosc]"));
             return;
         }
         String targetName = strings[0];
         if(!provider.isPlayerOnline(targetName)){
-            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.RED + "That player is not online right now."));
+            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.AQUA + "[TCMsg]" + ChatColor.RED + "Ten gracz nie jest teraz w grze."));
             return;
         }
         StringBuilder msgBuilder = new StringBuilder();
