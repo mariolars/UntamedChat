@@ -31,12 +31,12 @@ public class ReplyCommand extends Command implements TabExecutor{
     @Override
     public void execute(CommandSender sender, String[] strings) {
         if(strings.length < 1){
-            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.RED + "Please include a message! /reply {message}"));
+            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.AQUA + "[TCMsg]" + ChatColor.RED + "Nie mozesz wyslac pustej wiadomosci! /reply [wiadomosc]"));
             return;
         }
         String targetName = provider.getReply(sender.getName());
         if(targetName == null || !provider.isPlayerOnline(targetName)){
-            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.RED + "You have nobody to reply to!"));
+            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.AQUA + "[TCMsg]" + ChatColor.RED + "Nie prowadzisz z nikim jeszcze rozmowy!"));
             return;
         }
         StringBuilder msgBuilder = new StringBuilder();
