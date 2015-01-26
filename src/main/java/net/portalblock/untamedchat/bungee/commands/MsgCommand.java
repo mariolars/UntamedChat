@@ -31,7 +31,7 @@ public class MsgCommand extends Command implements TabExecutor{
     @Override
     public void execute(CommandSender sender, String[] strings) {
         if(strings.length < 2){
-            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.RED + "Please include a player name and message! /msg {player} {message}"));
+            sender.sendMessage(TextComponent.fromLegacyText(ChatColor.RED + "Uzyj /msg [nick] [wiadomosc]"));
             return;
         }
         String targetName = strings[0];
